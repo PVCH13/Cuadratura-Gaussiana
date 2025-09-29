@@ -64,7 +64,7 @@ En la **cuadratura Gauss–Legendre**, existe una **regla universal para escoger
 Vea también que al estar el método definido en el intervalo $[-1, 1]$ es necesario un cambio de variable a un intervalo arbitrario. En nuestro caso, eso se realizará de manera computacional a patir de una función establecida, por lo que teóricamente no se abordará cómo realizarlo. 
 
 
-Finalmente, es realevante hablar puntualmente de las ventajas y desventajas del método:
+Finalmente, es relevante hablar puntualmente de las ventajas y desventajas del método:
 
 **Ventajas:**
 
