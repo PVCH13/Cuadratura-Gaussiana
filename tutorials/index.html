@@ -298,6 +298,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -363,6 +372,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -388,6 +406,7 @@ f(x) = x^6 - x^2 \sin(2x), \quad x \in [1,3]
 <pre><code class="language-python">import numpy as np
 from scipy.special import legendre
 
+
 # Definición de la función a integrar
 def integrando(varInd):
     return varInd**6 - varInd**2 * np.sin(2*varInd)
@@ -403,8 +422,21 @@ def gaussxwab(a, b, x, w):
 
 # Intervalo de integración
 a, b = 1, 3
-
-# En este caso, a partir de N=4 se cumple que 2N - 1 &gt; 6, por lo que para 4 o números mayores se obtiene un resultado exacto. 
+</code></pre>
+<h2 id="uso">Uso</h2>
+<p>Una vez hayan sido implementadas las funciones mostradas anteriormente, para realizar el cálculo de la integral se deben realizar los siguientes pasos.</p>
+<ol>
+<li>Invocar la función <strong>gaussxw(N)</strong> y reemplazar <span class="arithmatex">\(N\)</span> por el número que se desee trabajar, asignando sus valores de retorno a dos variables, donde la primera contendrá los puntos y la segunda los pesos. </li>
+<li>
+<p>Redefinir las variables definidas en el paso <strong>1.</strong> mediante la función <strong>gaussxwab</strong>, que toma como argumentos: el límite de integración inferior, el límite de integración inferior, los puntos (<strong>1.</strong>), los pesos (<strong>1.</strong>). Esto permite realizar el cambio de variable para obtener los puntos y los pesos en el intervalo definido. </p>
+<p>Note que <span class="arithmatex">\(a\)</span> y <span class="arithmatex">\(b\)</span> fueron definidos en la integración del código, en cualquier caso usted podría cambiar estos valores al darle los argumentos a la función si desea otro intervalo de integración. Además, puede no redefinir las variables, sino crear unas nuevas, lo importante es ser consistente en el paso <strong>3.</strong></p>
+</li>
+<li>
+<p>Realice e imprima la suma de los productos de los pesos con la función <strong>integrando</strong> que toma como variable los puntos. Puede hacerlo usando <span class="arithmatex">\(np.sum\)</span>, tal y como se muestra a continuación en el ejemplo.</p>
+</li>
+</ol>
+<p>El ejemplo utiliza un <span class="arithmatex">\(foor loop\)</span> para evidenciar el resultado con distintos valores de <span class="arithmatex">\(N\)</span>.  </p>
+<pre><code class="language-python"># En este caso, a partir de N=4 se cumple que 2N - 1 &gt; 6, por lo que para 4 o números mayores se obtiene un resultado exacto. 
 for N in [2, 3, 4, 5]:
     puntos, pesos = gaussxw(N)
     puntos, pesos = gaussxwab(a, b, puntos, pesos)
