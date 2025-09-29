@@ -1,0 +1,4 @@
+# Referencia de funciones
+
+::: gauss
+

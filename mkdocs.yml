@@ -1,0 +1,27 @@
+site_name: "Pavel Ramírez, C4I759: Cuadratura Gaussiana, documentación de código y Git"
+
+nav:
+  - Introducción: index.md
+  - Método numérico: explanation.md
+  - Tutorial: tutorials.md
+  - Referencia de funciones: reference.md
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_docstring_examples: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
